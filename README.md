@@ -40,13 +40,14 @@ Run vagrant up from the project root directory. This will bring up ubuntu with d
 vagrant up
 ~~~~
 
-SSH into the vagrant machine and cd to /vagrant/ directoy. 
+SSH into the vagrant machine cd to /vagrant/ directoy. 
 ~~~~
 vagrant ssh
 ~~~~
 
-edit the .env file and set the vcenter info 
+Change working dir to /vagrant/ directoy and edit the .env file and set the vcenter info 
 ~~~~
+$ cd /vagrant
 $ vi .env
 ~~~~
 
