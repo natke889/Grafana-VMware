@@ -1,0 +1,11 @@
+apiVersion: 1
+
+datasources:
+  - name: DS_INFLUXDB
+    isDefault: true
+    type: influxdb
+    access: proxy
+    database: db
+    url: http://${PROJ_NAME}-influxdb:8086
+    jsonData:
+      httpMode: GET
