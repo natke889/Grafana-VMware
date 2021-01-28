@@ -45,7 +45,7 @@ Run the docker compose command in order to starting the dockers.
 vagrant ssh --command "docker-compose -f docker-compose.yml up -d"
 ~~~~
 
-Access Grafana at **http://192.168.65.211:3001**. (The ip address can be edit in th Vagrantfile)
+Access Grafana at **http://192.168.65.211:3001**. (The IP address can be edit in th Vagrantfile)
 
 ## Install on non-internet server
 The following stages need to be taken in order to pull the docker images and load them in non-internet access server
