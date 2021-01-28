@@ -40,7 +40,7 @@ Run vagrant up from the project root directory. This will bring up ubuntu with d
 vagrant up
 ~~~~
 
-SSH into the vagrant machine cd to /vagrant/ directoy. 
+SSH into the vagrant machine.
 ~~~~
 vagrant ssh
 ~~~~
