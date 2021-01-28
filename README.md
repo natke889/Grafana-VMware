@@ -42,7 +42,7 @@ vagrant up
 
 Run the docker compose command in order to starting the dockers.
 ~~~~
-vagrant ssh --command "docker-compose -f docker-compose.yml up -d"
+vagrant ssh --command "cd /vagrant && docker-compose -f docker-compose.yml up -d"
 ~~~~
 
 Access Grafana at **http://192.168.65.211:3001**. (The IP address can be edit in th Vagrantfile)
