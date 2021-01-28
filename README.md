@@ -35,25 +35,18 @@ The dashboards are available at **http://<host\>:3001** using default credential
 ## Testing
 The project can be tested using [Vagrant](https://www.vagrantup.com/docs/installation) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
 
+Clone the repo and change to the project directory.
+
+Edit the .env file and set the vcenter info.
+
 Run vagrant up from the project root directory. This will bring up ubuntu with docker installed. 
 ~~~~
 vagrant up
 ~~~~
 
-SSH into the vagrant machine.
-~~~~
-vagrant ssh
-~~~~
-
-Change working dir to /vagrant/ directoy and edit the .env file and set the vcenter info 
-~~~~
-$ cd /vagrant
-$ vi .env
-~~~~
-
 Run the docker compose command in order to starting the dockers.
 ~~~~
-$ docker-compose -f docker-compose.yml up -d"
+$ vagrant ssh "cd /vagrant && docker-compose -f docker-compose.yml up -d"
 ~~~~
 
 Access Grafana at **http://192.168.65.211:3001**. (The IP address can be edit in th Vagrantfile)
