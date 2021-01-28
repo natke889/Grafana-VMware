@@ -3,7 +3,7 @@
 This project provides an automated installation and deployment of the Grafana dashboard for VMware vSphere.
 
 ## Overview
-The project based on various open source components and tools in order to do so. The telegraf will periodically poll your VMware vcenters data at a regular interval and pushed into an [InfluxDB](https://www.influxdata.com/) time-series database. [Grafana](https://grafana.com/), a data visualization engine for time-series data, is then utilized along with several customized [dashboards](https://grafana.com/grafana/dashboards/8159) of [Jorge de la Cruz](https://grafana.com/orgs/jorgedelacruz) to present the data graphically with . All of these components are integrated together using [Docker](https://www.docker.com/).
+The project based on various open source components and tools in order to do so. The telegraf will periodically poll your VMware vcenters data at a regular interval and pushed into an [InfluxDB](https://www.influxdata.com/) time-series database. [Grafana](https://grafana.com/), a data visualization engine for time-series data, is then utilized along with several customized [dashboards](https://github.com/jorgedlcruz/vmware-grafana) of [Jorge de la Cruz](https://github.com/jorgedlcruz) to present the data graphically with . All of these components are integrated together using [Docker](https://www.docker.com/).
 
 The only real requirements to utilize this project are a Linux OS and a Docker installation with Docker Compose.
 
