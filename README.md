@@ -40,9 +40,19 @@ Run vagrant up from the project root directory. This will bring up ubuntu with d
 vagrant up
 ~~~~
 
+SSH into the vagrant machine and cd to /vagrant/ directoy. 
+~~~~
+vagrant ssh
+~~~~
+
+edit the .env file and set the vcenter info 
+~~~~
+$ vi .env
+~~~~
+
 Run the docker compose command in order to starting the dockers.
 ~~~~
-vagrant ssh --command "cd /vagrant && docker-compose -f docker-compose.yml up -d"
+$ docker-compose -f docker-compose.yml up -d"
 ~~~~
 
 Access Grafana at **http://192.168.65.211:3001**. (The IP address can be edit in th Vagrantfile)
