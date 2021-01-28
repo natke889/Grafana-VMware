@@ -36,8 +36,15 @@ The dashboards are available at **http://<host\>:3001** using default credential
 The project can be tested using [Vagrant](https://www.vagrantup.com/docs/installation) and [VirtualBox](https://www.virtualbox.org/wiki/Downloads). 
 
 Clone the repo and change to the project directory.
+~~~~
+git clone https://github.com/natke889/Grafana-VMware.git
+cd Grafana-VMware
+~~~~
 
 Edit the .env file and set the vcenter info.
+~~~~
+vi .env
+~~~~
 
 Run vagrant up from the project root directory. This will bring up ubuntu with docker installed. 
 ~~~~
