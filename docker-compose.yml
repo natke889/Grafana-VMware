@@ -1,0 +1,72 @@
+version: '3'
+services:
+
+  influxdb:
+    image: natke889/${PROJ_NAME}-influxdb:${TAG}
+    container_name: ${PROJ_NAME}-influxdb
+    #mem_limit: 2G # Can be set with docker-composer version '2'
+    restart: unless-stopped
+# Internal ports to be exposed to other linked services
+# They will not be exposed to the host machine
+#    expose:
+#      - 8086
+#      - 8083
+#      - 2003
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: 10m
+    networks:
+      - grafana-vmware
+    volumes:
+      - grafana-vmware-influxdb_data:/var/lib/influxdb
+    environment:
+      - PROJ_NAME=${PROJ_NAME}
+
+  grafana:
+    image: natke889/${PROJ_NAME}-grafana:${TAG}
+    container_name: ${PROJ_NAME}-grafana
+    restart: unless-stopped
+    depends_on:
+      - influxdb
+    ports:
+      - 3001:3000
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: 10m
+    networks:
+      - grafana-vmware
+    volumes:
+      - grafana-vmware-grafana_data:/var/lib/grafana
+    environment:
+      - PROJ_NAME=${PROJ_NAME}
+
+  telegraf:
+    image: natke889/${PROJ_NAME}-telegraf:${TAG}
+    container_name: ${PROJ_NAME}-telegraf
+    restart: unless-stopped
+    depends_on:
+      - influxdb
+    logging:
+      driver: "json-file"
+      options:
+        max-file: "5"
+        max-size: 10m
+    networks:
+      - grafana-vmware
+    environment:
+      - PROJ_NAME=${PROJ_NAME}
+      - VCENTERS_URL=${VCENTERS_URL}
+      - VCENTERS_USER=${VCENTERS_USER}
+      - VCENTERS_PASS=${VCENTERS_PASS}
+
+networks:
+  grafana-vmware:
+    external: false
+
+volumes:
+  grafana-vmware-grafana_data:
+  grafana-vmware-influxdb_data:
