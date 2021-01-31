@@ -20,16 +20,13 @@ services:
     networks:
       - grafana-vmware
     volumes:
-      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
-      - ./grafana/provisioning:/etc/grafana/provisioning
-      - ./grafana/dashboards:/etc/dashboards
       - grafana-vmware-influxdb_data:/var/lib/influxdb
     environment:
       - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
 
   grafana:
-    image: natke889/${PROJ_NAME}-grafana:${TAG}
+    image: grafana:7.3.5
     container_name: ${PROJ_NAME}-grafana
     restart: unless-stopped
     depends_on:
@@ -44,6 +41,10 @@ services:
     networks:
       - grafana-vmware
     volumes:
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/plugins:/var/lib/grafana/plugins
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/dashboards
       - grafana-vmware-grafana_data:/var/lib/grafana
     environment:
       - INFLUXDB_DB=db
