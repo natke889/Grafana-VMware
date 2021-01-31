@@ -63,21 +63,21 @@ The following stages need to be taken in order to pull the docker images and loa
 ~~~~
 pull the image on a machine with internet access.
 
-$ docker pull natke889/grafana-vmware-telegraf:1.1
-$ docker pull natke889/grafana-vmware-grafana:1.1
-$ docker pull natke889/grafana-vmware-influxdb:1.1
+$ docker pull telegraf:1.17
+$ docker pull influxdb:1.8.3
+$ docker pull grafana/grafana:7.3.5
 
 save that image to a .tar files.
 
-$ docker save --input grafana-vmware-telegraf.tar natke889/grafana-vmware-telegraf:1.1
-$ docker save --input grafana-vmware-grafana.tar natke889/grafana-vmware-grafana:1.1
-$ docker save --input grafana-vmware-influxdb.tar natke889/grafana-vmware-influxdb:1.1
+$ docker save --output telegraf.tar telegraf:1.17
+$ docker save --output influxdb.tar influxdb:1.8.3
+$ docker save --output grafana.tar grafana/grafana:7.3.5
 
 copy those files to any machine and load the .tar files to docker with the docker compose command.
 
-$ docker load --output grafana-vmware-telegraf.tar
-$ docker load --output grafana-vmware-grafana.tar
-$ docker load --output grafana-vmware-influxdb.tar
+$ docker load --output telegraf.tar
+$ docker load --output influxdb.tar
+$ docker load --output grafana.tar
 ~~~~
 
 ## Screenshots
