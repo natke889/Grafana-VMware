@@ -2,7 +2,7 @@ version: '3'
 services:
 
   influxdb:
-    image: natke889/${PROJ_NAME}-influxdb:${TAG}
+    image: influxdb:1.8.3
     container_name: ${PROJ_NAME}-influxdb
     #mem_limit: 2G # Can be set with docker-composer version '2'
     restart: unless-stopped
@@ -20,8 +20,12 @@ services:
     networks:
       - grafana-vmware
     volumes:
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/dashboards
       - grafana-vmware-influxdb_data:/var/lib/influxdb
     environment:
+      - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
 
   grafana:
@@ -42,10 +46,11 @@ services:
     volumes:
       - grafana-vmware-grafana_data:/var/lib/grafana
     environment:
+      - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
 
   telegraf:
-    image: natke889/${PROJ_NAME}-telegraf:${TAG}
+    image: telegraf:1.17
     container_name: ${PROJ_NAME}-telegraf
     restart: unless-stopped
     depends_on:
@@ -57,7 +62,10 @@ services:
         max-size: 10m
     networks:
       - grafana-vmware
+    volumes:
+      - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
     environment:
+      - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
       - VCENTERS_URL=${VCENTERS_URL}
       - VCENTERS_USER=${VCENTERS_USER}

@@ -69,9 +69,9 @@ $ docker pull natke889/grafana-vmware-influxdb:1.1
 
 save that image to a .tar files.
 
-$ docker save --output grafana-vmware-telegraf.tar natke889/grafana-vmware-telegraf:1.1
-$ docker save --output grafana-vmware-grafana.tar natke889/grafana-vmware-grafana:1.1
-$ docker save --output grafana-vmware-influxdb.tar natke889/grafana-vmware-influxdb:1.1
+$ docker save --input grafana-vmware-telegraf.tar natke889/grafana-vmware-telegraf:1.1
+$ docker save --input grafana-vmware-grafana.tar natke889/grafana-vmware-grafana:1.1
+$ docker save --input grafana-vmware-influxdb.tar natke889/grafana-vmware-influxdb:1.1
 
 copy those files to any machine and load the .tar files to docker with the docker compose command.
 

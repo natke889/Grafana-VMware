@@ -5,7 +5,7 @@ datasources:
     isDefault: true
     type: influxdb
     access: proxy
-    database: db
+    database: ${INFLUXDB_DB}
     url: http://${PROJ_NAME}-influxdb:8086
     jsonData:
       httpMode: GET
