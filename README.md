@@ -79,3 +79,17 @@ $ docker load --output grafana-vmware-telegraf.tar
 $ docker load --output grafana-vmware-grafana.tar
 $ docker load --output grafana-vmware-influxdb.tar
 ~~~~
+
+## Screenshots
+*VMware vSphere Overview Dashboard*
+![VMware vSphere Overview Dashboard](https://postimg.cc/t7FLrtM1)
+
+*VMware vSphere Hosts Dashboard*
+![VMware vSphere Hosts Dashboard](https://postimg.cc/TLgH4fC8)
+
+*VMware vSphere Datastores Dashboard*
+![VMware vSphere Datastores Dashboard](https://postimg.cc/BPC7JprM)
+
+*VMware vSphere VMs Dashboard*
+![VMware vSphere VMs Dashboard](https://postimg.cc/t7HXCT0x)
+
