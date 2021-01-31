@@ -82,14 +82,14 @@ $ docker load --output grafana-vmware-influxdb.tar
 
 ## Screenshots
 *VMware vSphere Overview Dashboard*
-![VMware vSphere Overview Dashboard](https://postimg.cc/t7FLrtM1)
+![VMware vSphere Overview Dashboard](https://i.postimg.cc/qBF4v1cG/1.png)
 
 *VMware vSphere Hosts Dashboard*
-![VMware vSphere Hosts Dashboard](https://postimg.cc/TLgH4fC8)
+![VMware vSphere Hosts Dashboard](https://i.postimg.cc/k4p3D5S5/2.png)
 
 *VMware vSphere Datastores Dashboard*
-![VMware vSphere Datastores Dashboard](https://postimg.cc/BPC7JprM)
+![VMware vSphere Datastores Dashboard](https://i.postimg.cc/1XkkcYJh/3.png)
 
 *VMware vSphere VMs Dashboard*
-![VMware vSphere VMs Dashboard](https://postimg.cc/t7HXCT0x)
+![VMware vSphere VMs Dashboard](https://i.postimg.cc/ryDzj0QQ/4.png)
 
