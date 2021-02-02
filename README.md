@@ -75,9 +75,9 @@ $ docker save --output grafana.tar grafana/grafana:7.3.5
 
 copy those files to any machine and load the .tar files to docker with the docker compose command.
 
-$ docker load --output telegraf.tar
-$ docker load --output influxdb.tar
-$ docker load --output grafana.tar
+$ docker load --input telegraf.tar
+$ docker load --input influxdb.tar
+$ docker load --input grafana.tar
 ~~~~
 
 ## Screenshots
