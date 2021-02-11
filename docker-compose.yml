@@ -4,14 +4,7 @@ services:
   influxdb:
     image: influxdb:1.8.3
     container_name: ${PROJ_NAME}-influxdb
-    #mem_limit: 2G # Can be set with docker-composer version '2'
     restart: unless-stopped
-# Internal ports to be exposed to other linked services
-# They will not be exposed to the host machine
-#    expose:
-#      - 8086
-#      - 8083
-#      - 2003
     logging:
       driver: "json-file"
       options:
@@ -65,12 +58,15 @@ services:
       - grafana-vmware
     volumes:
       - ./telegraf/telegraf.conf:/etc/telegraf/telegraf.conf
+      - ./telegraf/telegraf.d:/etc/telegraf/telegraf.d
+    command: --config-directory /etc/telegraf/telegraf.d
     environment:
       - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
       - VCENTERS_URL=${VCENTERS_URL}
       - VCENTERS_USER=${VCENTERS_USER}
       - VCENTERS_PASS=${VCENTERS_PASS}
+    
 
 networks:
   grafana-vmware:
