@@ -13,7 +13,7 @@ services:
     networks:
       - grafana-vmware
     volumes:
-      - grafana-vmware-influxdb_data:/var/lib/influxdb
+      - ./influxdb/data:/var/lib/influxdb
     environment:
       - INFLUXDB_DB=db
       - PROJ_NAME=${PROJ_NAME}
@@ -74,4 +74,4 @@ networks:
 
 volumes:
   grafana-vmware-grafana_data:
-  grafana-vmware-influxdb_data:
+  
